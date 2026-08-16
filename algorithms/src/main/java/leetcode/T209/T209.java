@@ -30,7 +30,6 @@ public class T209 {
         for (int end = 0; end < nums.length; end++) {
             window_state += nums[end];
 
-            //end = 2 -> true
             while (window_state >= target) {
                 result = Math.min(result, end - begin + 1);
                 window_state -= nums[begin];
