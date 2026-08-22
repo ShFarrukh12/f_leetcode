@@ -1,8 +1,8 @@
-package leetcode.T206;
+package leetcode.T207;
 
 import leetcode.ListNode;
 
-public class T206 {
+public class T207 {
     public ListNode reverseList(final ListNode head) {
         ListNode current = head;
         ListNode prev = null;
@@ -14,6 +14,6 @@ public class T206 {
             prev = current;
         }
 
-        return current;
+        return prev;
     }
 }

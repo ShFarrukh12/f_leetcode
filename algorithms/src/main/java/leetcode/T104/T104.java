@@ -1,5 +1,7 @@
 package leetcode.T104;
 
+import leetcode.TreeNode;
+
 import java.util.Stack;
 
 /**'
@@ -14,7 +16,7 @@ public class T104 {
             return 0;
         }
 
-        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+        return Math.max(maxDepth(root.getLeft()), maxDepth(root.getRight())) + 1;
     }
 
     public int maxDepth1(TreeNode root) {
@@ -34,8 +36,8 @@ public class T104 {
             }
 
             result = Math.max(result, depth);
-            stack.push(new Pair(node.left,  depth + 1));
-            stack.push(new Pair(node.right, depth + 1));
+            stack.push(new Pair(node.getLeft(),  depth + 1));
+            stack.push(new Pair(node.getRight(), depth + 1));
         }
 
         return result;

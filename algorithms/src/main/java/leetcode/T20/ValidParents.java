@@ -36,7 +36,7 @@ public class ValidParents {
 
         for (String parent : parents.split("")) {
             if (parentPair.get(parent) != null) {
-                stack.add(parent);
+                stack.push(parent);
             } else {
                 if (stack.isEmpty()) {
                     return false;

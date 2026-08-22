@@ -1,4 +1,6 @@
-package leetcode.T104;
+package leetcode.T226;
+
+import leetcode.TreeNode;
 
 /**
  * Given the root of a binary tree, invert the tree, and return its root.

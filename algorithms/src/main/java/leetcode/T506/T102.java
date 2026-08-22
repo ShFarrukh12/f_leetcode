@@ -1,4 +1,4 @@
-package leetcode.T102;
+package leetcode.T506;
 
 import leetcode.TreeNode;
 
@@ -16,8 +16,8 @@ import java.util.Queue;
  * Output: [[3],[9,20],[15,7]]
  */
 public class T102 {
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<>();
+    public List<Integer> levelOrder(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
 
         if (root == null) {
             return result;
@@ -28,22 +28,27 @@ public class T102 {
 
         while (!queue.isEmpty()) {
             var queue_size = queue.size();
-            List<Integer> currentArray = new ArrayList<>();
+            Integer currentLevMax = Integer.MIN_VALUE;
 
             for (int i = 0; i < queue_size; i++) {
                 TreeNode currentNode = queue.poll();
 
                 if (currentNode != null) {
-                    currentArray.add(currentNode.getVal());
+                    if (currentNode.getVal() > currentLevMax) {
+                        currentLevMax = currentNode.getVal();
+                    }
 
                     if (currentNode.getLeft() != null) {
                         queue.offer(currentNode.getLeft());
                     }
+
                     if (currentNode.getRight() != null) {
                         queue.offer(currentNode.getRight());
                     }
                 }
             }
+
+            result.add(currentLevMax);
         }
 
         return result;
